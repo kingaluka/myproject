@@ -64,9 +64,17 @@ public class Helpmethods {
 
 //    validarea unui mesaj
 
-    public void validatemessage (WebElement element, String value)
+    public void validatemessagewithgettext (WebElement element, String value)
     { String actualmessage = element.getText();
       Assert.assertTrue(value.equals(actualmessage));
     }
 
+//    validare mesaj cu is.Display
+    public void validatemessagewithisdisplay (WebElement element)
+    {
+        if (element.isDisplayed())
+        {
+            Assert.assertTrue(element.isDisplayed());
+        }
+    }
 }

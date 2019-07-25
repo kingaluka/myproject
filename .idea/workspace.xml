@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f3cb754b-6c63-470d-825f-acfa55b32954" name="Default Changelist" comment="" />
+    <list default="true" id="f3cb754b-6c63-470d-825f-acfa55b32954" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/test/java/Help/Helpmethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Help/Helpmethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Test/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Test/LoginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Test/RegisterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Test/RegisterTest.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,11 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/Help/Helpmethods.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="70" selection-start-line="70" selection-end-line="70" />
+            <state relative-caret-position="269">
+              <caret line="79" column="1" lean-forward="true" selection-start-line="79" selection-start-column="1" selection-end-line="79" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1300#1301#0" expanded="true" />
@@ -44,22 +48,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/Test/RegisterTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="24" column="57" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/resources/InputDate.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" column="61" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="61" />
+            <state relative-caret-position="54">
+              <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -67,8 +59,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/Test/LoginTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="828">
-              <caret line="55" selection-start-line="55" selection-end-line="55" />
+            <state relative-caret-position="-57">
+              <caret line="27" column="44" lean-forward="true" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/Test/RegisterTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="159">
+              <caret line="36" lean-forward="true" selection-start-line="26" selection-start-column="7" selection-end-line="28" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -85,6 +89,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -92,10 +99,10 @@
         <option value="$PROJECT_DIR$/src/test/resources/InpurDate.properties" />
         <option value="$PROJECT_DIR$/src/test/java/Test/registertest.java" />
         <option value="$PROJECT_DIR$/src/test/java/Help/BaseTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/Test/RegisterTest.java" />
-        <option value="$PROJECT_DIR$/src/test/resources/InputDate.properties" />
         <option value="$PROJECT_DIR$/src/test/java/Test/LoginTest.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/InputDate.properties" />
         <option value="$PROJECT_DIR$/src/test/java/Help/Helpmethods.java" />
+        <option value="$PROJECT_DIR$/src/test/java/Test/RegisterTest.java" />
       </list>
     </option>
   </component>
@@ -203,7 +210,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.LoginTest.logintest">
+  <component name="RunManager" selected="JUnit.RegisterTest.register">
     <configuration name="BaseTest.openbrowser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MyPojectAutomation" />
       <extension name="coverage">
@@ -284,9 +291,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RegisterTest.register" />
         <item itemvalue="JUnit.LoginTest.logintest" />
         <item itemvalue="JUnit.LoginTest" />
-        <item itemvalue="JUnit.RegisterTest.register" />
         <item itemvalue="JUnit.RegisterTest" />
         <item itemvalue="JUnit.BaseTest.openbrowser" />
       </list>
@@ -306,35 +313,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="LoginTest_logintest - 2019.07.25 at 14h 58m 51s.xml">
+    <history-entry file="LoginTest_logintest - 2019.07.25 at 23h 14m 59s.xml">
       <configuration name="LoginTest.logintest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LoginTest_logintest - 2019.07.25 at 15h 34m 30s.xml">
+    <history-entry file="LoginTest_logintest - 2019.07.25 at 23h 21m 30s.xml">
       <configuration name="LoginTest.logintest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LoginTest_logintest - 2019.07.25 at 15h 36m 03s.xml">
+    <history-entry file="LoginTest_logintest - 2019.07.25 at 23h 27m 04s.xml">
       <configuration name="LoginTest.logintest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LoginTest_logintest - 2019.07.25 at 15h 50m 15s.xml">
+    <history-entry file="LoginTest_logintest - 2019.07.25 at 23h 27m 20s.xml">
       <configuration name="LoginTest.logintest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LoginTest_logintest - 2019.07.25 at 15h 51m 27s.xml">
-      <configuration name="LoginTest.logintest" configurationId="JUnit" />
+    <history-entry file="RegisterTest_register - 2019.07.25 at 23h 37m 58s.xml">
+      <configuration name="RegisterTest.register" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LoginTest - 2019.07.25 at 16h 22m 48s.xml">
-      <configuration name="LoginTest" configurationId="JUnit" />
+    <history-entry file="RegisterTest_register - 2019.07.25 at 23h 39m 44s.xml">
+      <configuration name="RegisterTest.register" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LoginTest_logintest - 2019.07.25 at 18h 59m 14s.xml">
-      <configuration name="LoginTest.logintest" configurationId="JUnit" />
+    <history-entry file="RegisterTest_register - 2019.07.25 at 23h 40m 12s.xml">
+      <configuration name="RegisterTest.register" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LoginTest_logintest - 2019.07.25 at 19h 03m 28s.xml">
-      <configuration name="LoginTest.logintest" configurationId="JUnit" />
+    <history-entry file="RegisterTest_register - 2019.07.25 at 23h 40m 56s.xml">
+      <configuration name="RegisterTest.register" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LoginTest_logintest - 2019.07.25 at 19h 03m 58s.xml">
-      <configuration name="LoginTest.logintest" configurationId="JUnit" />
+    <history-entry file="RegisterTest_register - 2019.07.25 at 23h 51m 17s.xml">
+      <configuration name="RegisterTest.register" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LoginTest_logintest - 2019.07.25 at 19h 09m 23s.xml">
-      <configuration name="LoginTest.logintest" configurationId="JUnit" />
+    <history-entry file="RegisterTest_register - 2019.07.25 at 23h 51m 46s.xml">
+      <configuration name="RegisterTest.register" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -351,7 +358,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3289689" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -374,9 +381,15 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/Test/LoginTest.java</url>
-          <line>40</line>
+          <line>63</line>
           <properties />
-          <option name="timeStamp" value="1" />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/Test/LoginTest.java</url>
+          <line>26</line>
+          <properties />
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -403,27 +416,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Test/RegisterTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="24" column="57" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resources/InputDate.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="61" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="61" />
+        <state relative-caret-position="54">
+          <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Test/LoginTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="828">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
+        <state relative-caret-position="-57">
+          <caret line="27" column="44" lean-forward="true" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -432,12 +435,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Help/Helpmethods.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="70" selection-start-line="70" selection-end-line="70" />
+        <state relative-caret-position="269">
+          <caret line="79" column="1" lean-forward="true" selection-start-line="79" selection-start-column="1" selection-end-line="79" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1300#1301#0" expanded="true" />
             <element signature="e#1339#1340#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Test/RegisterTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="36" lean-forward="true" selection-start-line="26" selection-start-column="7" selection-end-line="28" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

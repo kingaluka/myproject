@@ -28,6 +28,13 @@ public class RegisterTest extends BaseTest {
         String usernamevalue = BaseTest.getvalue("usernamevalid");
         functions.completefield(usernamefield,usernamevalue);
 
+        WebElement usernamechecked = driver.findElement(By.xpath("//input[@class='full valid']"));
+        functions.validatemessagewithisdisplay(usernamechecked);
+//        if (usernamechecked.isDisplayed())
+//        {
+//          Assert.assertTrue(usernamechecked.isDisplayed());
+//        }
+
         WebElement emailfield = driver.findElement(By.xpath("//input[@id='email']"));
         String emailvalue = BaseTest.getvalue("emailvalid");
         functions.completefield(emailfield,emailvalue);
