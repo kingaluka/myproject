@@ -1,10 +1,16 @@
 package Help;
 
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.KeyInput;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.List;
 
 public class Helpmethods {
 
@@ -19,6 +25,7 @@ public class Helpmethods {
 //    click method
     public void clickelement (WebElement element)
     {
+
         element.click();
     }
 
@@ -61,14 +68,12 @@ public class Helpmethods {
         Actions action = new Actions(driver);
         action.moveToElement(element).build().perform();
     }
-
-//    validarea unui mesaj
-
-    public void validatemessagewithgettext (WebElement element, String value)
-    { String actualmessage = element.getText();
-      Assert.assertTrue(value.equals(actualmessage));
-    }
-
+//   validaretext
+    public void validatetext(WebElement element, String value)
+    {
+        String actualmessage=element.getText();
+        Assert.assertTrue(value.equals(actualmessage));
+     }
 //    validare mesaj cu is.Display
     public void validatemessagewithisdisplay (WebElement element)
     {
@@ -76,5 +81,37 @@ public class Helpmethods {
         {
             Assert.assertTrue(element.isDisplayed());
         }
+    }
+
+//    wait explicit
+
+    public void waitexplicit (WebElement element)
+    {
+        new WebDriverWait(driver,4500).until(ExpectedConditions.visibilityOf(element));
+    }
+
+//    wait explicit cu try
+    public void waitwithtry ()
+    {
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+//     press TAB key
+    public void pressTABkey (WebElement element)
+    {
+        element.sendKeys(Keys.TAB);
+
+    }
+
+//   metoda pentru validarea unei liste de webelement
+
+    public void validateListWebelement (List<WebElement> elements, int value)
+    {
+        Assert.assertTrue(elements.size()==value);
     }
 }
