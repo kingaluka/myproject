@@ -56,7 +56,7 @@ public class Helpmethods {
 
 //    complete a field
 
-    public void completefield (WebElement element, String value)
+    public void sendkeys (WebElement element, String value)
     {
         element.sendKeys(value);
     }
@@ -94,7 +94,7 @@ public class Helpmethods {
     public void waitwithtry ()
     {
         try {
-            Thread.sleep(3000);
+            Thread.sleep(4000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

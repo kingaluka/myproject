@@ -61,12 +61,12 @@ public class RegisterTest extends BaseTest {
 //      1. valid value for all fields
             if (index==0) {
                 usernamevalue = parseUsername[0];
-                functions.completefield(usernamefield,usernamevalue);
+                functions.sendkeys(usernamefield,usernamevalue);
                 emailvalue = parseEmail[0];
-                functions.completefield(emailfield,emailvalue);
+                functions.sendkeys(emailfield,emailvalue);
                 passwordvalue = parsePassword[0];
-                functions.completefield(passwordfield, passwordvalue);
-                functions.completefield(confirmpasswordfield,passwordvalue);
+                functions.sendkeys(passwordfield, passwordvalue);
+                functions.sendkeys(confirmpasswordfield,passwordvalue);
                 confirmpasswordfield.sendKeys(Keys.TAB);
 
                 functions.waitwithtry();
@@ -84,12 +84,12 @@ public class RegisterTest extends BaseTest {
 
             if (index==1) {
                 usernamevalue = parseUsername[1];
-                functions.completefield(usernamefield, usernamevalue);
+                functions.sendkeys(usernamefield, usernamevalue);
                 emailvalue = parseEmail[0];
-                functions.completefield(emailfield, emailvalue);
+                functions.sendkeys(emailfield, emailvalue);
                 passwordvalue = parsePassword[0];
-                functions.completefield(passwordfield, passwordvalue);
-                functions.completefield(confirmpasswordfield, passwordvalue);
+                functions.sendkeys(passwordfield, passwordvalue);
+                functions.sendkeys(confirmpasswordfield, passwordvalue);
                 confirmpasswordfield.sendKeys(Keys.TAB);
 
                 functions.waitwithtry();
@@ -109,12 +109,12 @@ public class RegisterTest extends BaseTest {
 //       3. invalid value for username field
             if (index==2) {
                 usernamevalue = parseUsername[2];
-                functions.completefield(usernamefield, usernamevalue);
+                functions.sendkeys(usernamefield, usernamevalue);
                 emailvalue = parseEmail[0];
-                functions.completefield(emailfield, emailvalue);
+                functions.sendkeys(emailfield, emailvalue);
                 passwordvalue = parsePassword[0];
-                functions.completefield(passwordfield, passwordvalue);
-                functions.completefield(confirmpasswordfield, passwordvalue);
+                functions.sendkeys(passwordfield, passwordvalue);
+                functions.sendkeys(confirmpasswordfield, passwordvalue);
                 confirmpasswordfield.sendKeys(Keys.TAB);
 
                 functions.waitwithtry();
@@ -135,12 +135,12 @@ public class RegisterTest extends BaseTest {
 //       4. too many characters for username field
             if (index==3) {
                 usernamevalue = parseUsername[3];
-                functions.completefield(usernamefield, usernamevalue);
+                functions.sendkeys(usernamefield, usernamevalue);
                 emailvalue = parseEmail[0];
-                functions.completefield(emailfield, emailvalue);
+                functions.sendkeys(emailfield, emailvalue);
                 passwordvalue = parsePassword[0];
-                functions.completefield(passwordfield, passwordvalue);
-                functions.completefield(confirmpasswordfield, passwordvalue);
+                functions.sendkeys(passwordfield, passwordvalue);
+                functions.sendkeys(confirmpasswordfield, passwordvalue);
                 confirmpasswordfield.sendKeys(Keys.TAB);
 
                 functions.waitwithtry();
@@ -161,12 +161,12 @@ public class RegisterTest extends BaseTest {
 
             if(index==4) {
                 usernamevalue = parseUsername[0];
-                functions.completefield(usernamefield,usernamevalue);
+                functions.sendkeys(usernamefield,usernamevalue);
                 emailvalue = parseEmail[2];
-                functions.completefield(emailfield,emailvalue);
+                functions.sendkeys(emailfield,emailvalue);
                 passwordvalue = parsePassword[0];
-                functions.completefield(passwordfield,passwordvalue);
-                functions.completefield(confirmpasswordfield,passwordvalue);
+                functions.sendkeys(passwordfield,passwordvalue);
+                functions.sendkeys(confirmpasswordfield,passwordvalue);
                 functions.pressTABkey(confirmpasswordfield);
 
                 //functions.waitwithtry();
@@ -195,12 +195,12 @@ public class RegisterTest extends BaseTest {
 
             if(index==5) {
                 usernamevalue = parseUsername[0];
-                functions.completefield(usernamefield,usernamevalue);
+                functions.sendkeys(usernamefield,usernamevalue);
                 emailvalue = parseEmail[0];
-                functions.completefield(emailfield,emailvalue);
+                functions.sendkeys(emailfield,emailvalue);
                 passwordvalue = parsePassword[2];
-                functions.completefield(passwordfield,passwordvalue);
-                functions.completefield(confirmpasswordfield,passwordvalue);
+                functions.sendkeys(passwordfield,passwordvalue);
+                functions.sendkeys(confirmpasswordfield,passwordvalue);
                 functions.pressTABkey(confirmpasswordfield);
 
              //functions.waitwithtry();
@@ -229,13 +229,13 @@ public class RegisterTest extends BaseTest {
 //      7. invalid value for confirm password field
             if(index==6) {
                 usernamevalue = parseUsername[0];
-                functions.completefield(usernamefield,usernamevalue);
+                functions.sendkeys(usernamefield,usernamevalue);
                 emailvalue = parseEmail[0];
-                functions.completefield(emailfield,emailvalue);
+                functions.sendkeys(emailfield,emailvalue);
                 passwordvalue = parsePassword[0];
-                functions.completefield(passwordfield,passwordvalue);
+                functions.sendkeys(passwordfield,passwordvalue);
                 confirmpasswordvalue = BaseTest.getvalue("confirmpasswordvalues");
-                functions.completefield(confirmpasswordfield,confirmpasswordvalue);
+                functions.sendkeys(confirmpasswordfield,confirmpasswordvalue);
                 functions.pressTABkey(confirmpasswordfield);
 
              //functions.waitwithtry();
@@ -283,4 +283,8 @@ public class RegisterTest extends BaseTest {
 //        driver.quit();
 
 //    }
+
+    //size lista de string
+//    lenght la vector []
+
 }

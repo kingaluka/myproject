@@ -6,35 +6,33 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.security.Key;
 import java.util.*;
 
-public class AddaSecondStop extends BaseTest {
+public class AddStops  extends BaseTest {
 
     public Helpmethods functions = new Helpmethods(driver);
     private String today;
 
     @Test
     public void addasecondstop (){
+        JavascriptExecutor scroll = (JavascriptExecutor)driver;
 //  click on login button
         WebElement loginbutton = driver.findElement(By.xpath("//span[@class='visible-lg-inline-block']"));
         functions.clickelement(loginbutton);
 //  complete all fields for login
         WebElement usernamefield = driver.findElement(By.xpath("//input[@id='username2']"));
         String usenamevalue = BaseTest.getvalue("userforlogin");
-        functions.completefield(usernamefield, usenamevalue);
-//  complete password field
+        functions.sendkeys(usernamefield, usenamevalue);
         WebElement passwordfield = driver.findElement(By.xpath("//input[@id='password2']"));
         String passwordvalue = BaseTest.getvalue("passwordforlogin");
-        functions.completefield(passwordfield, passwordvalue);
+        functions.sendkeys(passwordfield, passwordvalue);
 //  click on login button
-        WebElement Loginbutton = driver.findElement(By.xpath("//input[@id='submit']"));
-        functions.clickelement(Loginbutton);
+        WebElement log_inbutton = driver.findElement(By.xpath("//input[@id='submit']"));
+        functions.clickelement(log_inbutton);
 //  click on your travel button
         functions.waitwithtry();
         List<WebElement> menubarlist = driver.findElements(By.xpath("//nav/ul/li"));
@@ -45,22 +43,16 @@ public class AddaSecondStop extends BaseTest {
 //  complete the title and describe field for add a trip
         WebElement tripnamefield = driver.findElement(By.xpath("//input[@class='trip-name']"));
         String tripnamevalue = BaseTest.getvalue("tripnamevalues");
-        functions.completefield(tripnamefield,tripnamevalue);
-
-        WebElement describefield = driver.findElement(By.xpath("//textarea[@class='trip-description']"));
-        String describevalue = BaseTest.getvalue("describetripvalues");
-        functions.completefield(describefield,describevalue);
+        functions.sendkeys(tripnamefield,tripnamevalue);
 //   click on add trip button
+        functions.waitwithtry();
         WebElement addtripbutton = driver.findElement(By.xpath("//button[@class='tp-button has-icon green']"));
         functions.clickelement(addtripbutton);
 //   validarea titlului de trip
-
         functions.waitwithtry();
         WebElement triptitle = driver.findElement(By.xpath("//span[@class='trip-name']"));
-
         new WebDriverWait(driver,7500).until(ExpectedConditions.visibilityOf(triptitle));
         functions.validatetext(triptitle,tripnamevalue);
-
 
 
         // ADD A STOP
@@ -68,28 +60,48 @@ public class AddaSecondStop extends BaseTest {
 //  fill add a stop field
         List<String> stopValues=new ArrayList<String>();
         WebElement addastopfield = driver.findElement(By.xpath("//div[@id='geocoder-typeahead']/input"));
-        String firststopfield = BaseTest.getvalue("firststopname");
-        functions.completefield(addastopfield,firststopfield);
-//  click on first location from the list
-        List<WebElement> stoplist = driver.findElements(By.xpath("//div[@id='geocoder-typeahead']/div/ul/li"));
-        String firststopname = stoplist.get(0).getText();
+        String firststopname = BaseTest.getvalue("locationname");
         stopValues.add(firststopname);
-        functions.clickelement(stoplist.get(0));
-//  click on save stop button
+        functions.sendkeys(addastopfield,firststopname);
+
+//select the stopname
+        WebElement stopname =driver.findElement(By.xpath("//li[@class='highlighted']"));
+        functions.clickelement(stopname);
+
+        //  validarea paginii
+//        1. validarea stop name
+        WebElement firststop = driver.findElement(By.xpath("//h3/b"));
+        functions.validatetext(firststop,firststopname);
+//        2. validarea pagina de trip
+        functions.validatetext(triptitle,tripnamevalue);
+        String expectedyourtriptitle = BaseTest.getvalue("yourtripspagetitle");
+//        3. validarea pagina de web
+        functions.validatetitle(expectedyourtriptitle,driver);
+
+//click on save stop button
         WebElement savestopbutton = driver.findElement(By.xpath("//button[@id]"));
         functions.clickelement(savestopbutton);
-//validarea
+
+//VALIDARE
 //        1.titlul paginii
-        String expectedyourtriptitle = BaseTest.getvalue("yourtripspagetitle");
+
         functions.validatetitle(expectedyourtriptitle,driver);
+
 //        2. pagina de trip
+
         functions.validatetext(triptitle,tripnamevalue);
+
 //        3. vaidarea primul oprire
         functions.waitwithtry();
-        List<WebElement> locationlist = driver.findElements(By.xpath("//ul[@data-v-a115fc5c]/li"));
-        String actuallocation = locationlist.get(0).getText();
-        Assert.assertEquals("1 "+firststopname, actuallocation);
-        functions.hovermethod(locationlist.get(0),driver);
+        WebElement locationweb = driver.findElement(By.xpath("//ul[@data-v-a115fc5c]/li"));
+        String actuallocation = locationweb.getText();
+        String expectedlocation = "1 "+ firststopname;
+        Assert.assertEquals(expectedlocation, actuallocation);
+
+//        4. validarea locatiei pe harta
+        functions.waitwithtry();
+        WebElement firststoplocation = driver.findElement(By.xpath("//div[@class='place_label']"));
+        functions.validatetext(firststoplocation,firststopname);
 
 
 
@@ -100,9 +112,9 @@ public class AddaSecondStop extends BaseTest {
 //   fill the add a stop field
         functions.waitwithtry();
 
-        WebElement addastopfield2 = driver.findElement(By.xpath("//input[@data-v-6c7ee37b]"));
+        WebElement secondstopfield = driver.findElement(By.xpath("//input[@data-v-6c7ee37b]"));
         String secondstopvalue = BaseTest.getvalue("secondstopname");
-        functions.completefield(addastopfield2,secondstopvalue);
+        functions.sendkeys(secondstopfield,secondstopvalue);
 
         List<WebElement> secondstoplist = driver.findElements(By.xpath("//div[@data-v-6c7ee37b]/ul/li"));
         String secondstopname = secondstoplist.get(0).getText();
@@ -110,85 +122,85 @@ public class AddaSecondStop extends BaseTest {
         functions.clickelement(secondstoplist.get(0));
 
 //  validarea paginii
+//        1. validarea stop name
         WebElement secondstop = driver.findElement(By.xpath("//h3/b"));
         functions.validatetext(secondstop,secondstopname);
-
+//        2. validarea pagina de trip
+        functions.validatetext(triptitle,tripnamevalue);
+//        3. validarea pagina de web
         functions.validatetitle(expectedyourtriptitle,driver);
 
 
 //  click random for a arrival transport mode
+
         List<WebElement> arrivaltransportmodelist = driver.findElements(By.xpath("//div[@class='transport-mode-selector']/div"));
         Random r = new Random();
         int randomvalue =r.nextInt(arrivaltransportmodelist.size()); //Getting a random value that is between 0 and (list's size)-1
         functions.clickelement(arrivaltransportmodelist.get(randomvalue));
-//        arrivaltransportmodelist.get(randomvalue).click(); //Clicking on the random item in the list.
 
 //   select arrival and departure date
 
-        today = getCurrentDay();
-//        System.out.println("Today's number: " + today + "\n");
-
-        WebElement arrivaldate = driver.findElement(By.xpath("//div[@id='arrival-date-container']"));
-        functions.clickelement(arrivaldate);
+        WebElement arrivaldatebutton = driver.findElement(By.xpath("//div[@id='arrival-date-container']"));
+        functions.clickelement(arrivaldatebutton);
 
 //  scroll pana cand apare elementul
-        JavascriptExecutor jse = (JavascriptExecutor)driver;
-//        jse.executeScript("window.scrollBy(0,250)");
-        WebElement scrollpage = driver.findElement(By.xpath("//div[@id='arrival-date-container']"));
-        jse.executeScript("arguments[0].scrollIntoView();", scrollpage);
 
-//   selectarea ziua curenta
+        scroll.executeScript("arguments[0].scrollIntoView();", arrivaldatebutton);
+
+//   select arrival date
+        today = getCurrentDay();
         WebElement arrivaldatetable = driver.findElement(By.xpath("//div[@id='arrival-date-container']//div[@class='asd__inner-wrapper']/div/div[2]/table/tbody"));
-
-//        List<WebElement> rows = arrivaldatetable.findElements(By.tagName("tr"));
 
         List<WebElement> columns = arrivaldatetable.findElements(By.tagName("td"));
         for (WebElement cell: columns) {
             if (cell.getText().equals(today)){
-            cell.click();
-            break;
-        }
-    }
-
-        functions.waitwithtry();
-        jse.executeScript("window.scrollBy(0,-250)");
-
-
-        WebElement departuredatetable = driver.findElement(By.xpath("//div[@id='departure-date-container']"));
-        functions.clickelement(departuredatetable);
-
-//  scroll pana cand apare elementul
-        WebElement scrollpage3 = driver.findElement(By.xpath("//div[@id='departure-date-container']"));
-        jse.executeScript("arguments[0].scrollIntoView();", scrollpage3);
-
-        WebElement departuredate = driver.findElement(By.xpath("//div[@id='departure-date-container']//div[@class='asd__inner-wrapper']/div/div[2]/table/tbody"));
-
-//        List<WebElement> rows = arrivaldatetable.findElements(By.tagName("tr"));
-
-        List<WebElement> columns2 = departuredate.findElements(By.tagName("td"));
-        for (WebElement cell: columns2) {
-
-            if (cell.getText().equals("18")){
                 cell.click();
                 break;
             }
         }
 
-//        WebElement toppage = driver.findElement(By.xpath("//div[@id='pendingTripStop']/div/h3"));
-//        jse.executeScript("arguments[0].scrollIntoView();", toppage);
+        functions.waitwithtry();
+        scroll.executeScript("window.scrollBy(0,-250)");
 
-        WebElement savestopbutton2 = driver.findElement(By.xpath("//button[@id]"));
-        functions.clickelement(savestopbutton2);
+//    select departure date
+        WebElement departuredatebutton = driver.findElement(By.xpath("//div[@id='departure-date-container']"));
+        functions.clickelement(departuredatebutton);
+
+
+//  scroll pana cand apare elementul
+        scroll.executeScript("arguments[0].scrollIntoView();", departuredatebutton);
+
+        WebElement nextbutton = driver.findElement(By.xpath("//div[@id='departure-date-container']//button[@aria-label='Move forward to switch to the next month.']"));
+        functions.clickelement(nextbutton);
+
+
+        functions.waitwithtry();
+        WebElement departuredatetable = driver.findElement(By.xpath("//div[@id='departure-date-container']//div[@class='asd__inner-wrapper']/div/div[2]/table/tbody"));
+        List<WebElement> columns2 = departuredatetable.findElements(By.tagName("td"));
+        for (WebElement cell: columns2) {
+
+            if (cell.getText().equals("3")){
+                cell.click();
+                break;
+            }
+        }
+
+        functions.waitwithtry();
+        WebElement save2stopbutton = driver.findElement(By.xpath("//button[@id]"));
+        functions.clickelement(save2stopbutton);
 
 //   validarea
 //        1. validarea paginii
+
         functions.validatetitle(expectedyourtriptitle,driver);
 
 //        2. validarea tripname
+
         functions.waitwithtry();
         functions.validatetext(triptitle,tripnamevalue);
-//        driver.navigate().refresh();
-//        3. validarea a doua opririi in lista
+
+//        3. validarea opririile in lista
+
         functions.waitwithtry();
         List<WebElement> locationlist2 = driver.findElements(By.xpath("//ul[@data-v-a115fc5c]/li"));
         for (int index = 0; index < locationlist2.size(); index++) {
@@ -220,21 +232,30 @@ public class AddaSecondStop extends BaseTest {
         }
 
 
-//  delete the trip
+//  EDIT STOP
 
-
-        functions.waitwithtry();
-        WebElement proba = driver.findElement(By.xpath("//div[@id='drawer']"));
-        functions.hovermethod(proba,driver);
-        jse.executeScript("window.scrollBy(0,-250)");
-
+//        click pe oprire
 
         functions.clickelement(locationlist2.get(1));
         functions.waitwithtry();
+
+//        validarea your trip page
+        functions.validatetitle(expectedyourtriptitle, driver);
+
+
+//        validarea trip page
+        WebElement tripnameweb =driver.findElement(By.xpath("//h4/span[2][@data-v-393cebf4]"));
+        functions.validatetext(tripnameweb,tripnamevalue);
+
+//        validare pageul de oprire
+
         WebElement locationnameweb = driver.findElement(By.xpath("//span[@class='stop-name']"));
         new WebDriverWait(driver, 9500).until(ExpectedConditions.visibilityOf(locationnameweb));
         String actualstopname = locationnameweb.getText();
         Assert.assertEquals(secondstopname,actualstopname);
+
+
+//        click on edit stop button
 
         functions.waitwithtry();
         WebElement elipsabutton = driver.findElement(By.xpath("//i[@class='icon icon-ellipsis']"));
@@ -243,52 +264,75 @@ public class AddaSecondStop extends BaseTest {
         functions.hovermethod(editbutton, driver);
         functions.clickelement(editbutton);
 
+//        validare editing page
+        functions.waitwithtry();
+        WebElement editingweb = driver.findElement(By.xpath("//span[@class='stop-name']"));
+        String expectededitpagename = "Editing " + secondstopname;
+        functions.validatetext(editingweb,expectededitpagename);
+
+//      select "At Start" from dropdown list
+
         functions.waitwithtry();
         WebElement dropdown = driver.findElement(By.xpath("//span[@class='selected-option-label']"));
         functions.clickelement(dropdown);
-//        driver.findElement(By.id("msdd")).click();
         List<WebElement> list=driver.findElements(By.xpath("//ul[@class='select']/li"));
         for(int i=0;i<list.size();i++)
         {
             System.out.println(list.get(i).getText());
             if(list.get(i).getText().equalsIgnoreCase("At Start"))
             {functions.hovermethod(list.get(i),driver);
-                list.get(i).click();
-//                functions.clickelement(list.get(i));
+//                list.get(i).click();
+                functions.clickelement(list.get(i));
                 break;
             }
         }
 
+//        click on save button
 
+        functions.waitwithtry();
         WebElement save =driver.findElement(By.xpath("//button[@class='tp-button green']"));
         functions.clickelement(save);
+
+//       click on back button
 
         WebElement backbutton = driver.findElement(By.xpath("//h4/span[2][@data-v-393cebf4]"));
         new WebDriverWait(driver,8000).until(ExpectedConditions.visibilityOf(backbutton));
         functions.clickelement(backbutton);
 
+//        VALIDARE
+//        1. oprirea care a fost adaugat a doua oare acuma ii prima
         functions.waitwithtry();
-//        List<WebElement> locationlist = driver.findElements(By.xpath("//ul[@data-v-a115fc5c]/li"));
+        List<WebElement> locationlist1 = driver.findElements(By.xpath("//ul[@data-v-a115fc5c]/li"));
         for (int index = 0; index < locationlist2.size(); index++) {
             if(index==0) {
-                new WebDriverWait(driver, 7500).until(ExpectedConditions.visibilityOf(locationlist2.get(index)));
-                String stopname1 = locationlist2.get(index).getText();
+                new WebDriverWait(driver, 7500).until(ExpectedConditions.visibilityOf(locationlist1.get(index)));
+                String stopname1 = locationlist1.get(index).getText();
                 System.out.println(stopname1);
 
                 Assert.assertEquals("1 "+secondstopname,stopname1);
             }
             if(index==1) {
-                new WebDriverWait(driver, 7500).until(ExpectedConditions.visibilityOf(locationlist2.get(index)));
-                String stopname2 = locationlist2.get(index).getText();
+                new WebDriverWait(driver, 7500).until(ExpectedConditions.visibilityOf(locationlist1.get(index)));
+                String stopname2 = locationlist1.get(index).getText();
                 System.out.println(stopname2);
                 Assert.assertEquals("2 "+firststopname,stopname2);
 
             }
         }
 
+//        driver.navigate().refresh();
+        functions.waitwithtry();
+//        2. validarea paginii
+
+        functions.validatetitle(expectedyourtriptitle,driver);
+
+//        3. validarea tripname
+        WebElement triptitleweb = driver.findElement(By.xpath("//span[@class='trip-name']"));
+        functions.validatetext(triptitleweb,tripnamevalue);
 
 
     }
+
     //Get The Current Day
     private String getCurrentDay () {
         //Create a Calendar Object

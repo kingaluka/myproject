@@ -4,6 +4,7 @@ import Help.BaseTest;
 import Help.Helpmethods;
 import org.junit.Assert;
 import org.junit.Test;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -25,11 +26,11 @@ public class AddNote extends BaseTest {
 //  complete all fields for login
         WebElement usernamefield = driver.findElement(By.xpath("//input[@id='username2']"));
         String usenamevalue = BaseTest.getvalue("userforlogin");
-        functions.completefield(usernamefield, usenamevalue);
+        functions.sendkeys(usernamefield, usenamevalue);
 //  complete password field
         WebElement passwordfield = driver.findElement(By.xpath("//input[@id='password2']"));
         String passwordvalue = BaseTest.getvalue("passwordforlogin");
-        functions.completefield(passwordfield, passwordvalue);
+        functions.sendkeys(passwordfield, passwordvalue);
 //  click on login button
         WebElement Loginbutton = driver.findElement(By.xpath("//input[@id='submit']"));
         functions.clickelement(Loginbutton);
@@ -50,7 +51,7 @@ public class AddNote extends BaseTest {
         WebElement tripnameweb = driver.findElement(By.xpath("//ul/li[@data-v-19daf797]"));
         String tripname =BaseTest.getvalue("tripnamevalues");
         new WebDriverWait(driver,8500).until(ExpectedConditions.visibilityOf(tripnameweb));
-//        functions.waitexplicit(tripnameweb);
+
         functions.validatetext(tripnameweb, tripname);
         functions.clickelement(tripnameweb);
 
@@ -65,13 +66,13 @@ public class AddNote extends BaseTest {
 
 
         List<WebElement> locationlist2 = driver.findElements(By.xpath("//ul[@data-v-a115fc5c]/li"));
-        String actuallocationname =locationlist2.get(0).getText();
-        functions.clickelement(locationlist2.get(0));
+        String actuallocationname =locationlist2.get(1).getText();
+        functions.clickelement(locationlist2.get(1));
 
         functions.waitwithtry();
         WebElement locationnameweb = driver.findElement(By.xpath("//span[@class='stop-name']"));
         new WebDriverWait(driver, 7500).until(ExpectedConditions.visibilityOf(locationnameweb));
-        String locationname = "1 "+locationnameweb.getText();
+        String locationname = "2 "+locationnameweb.getText();
         Assert.assertEquals(actuallocationname,locationname);
 
 
@@ -97,7 +98,7 @@ public class AddNote extends BaseTest {
                 WebElement notefield = driver.findElement(By.xpath("//textarea[@data-v-6db1aff9]"));
                 new WebDriverWait(driver, 8500).until(ExpectedConditions.visibilityOf(notefield));
                 String privatenotevalue = parsenote[0];
-                functions.completefield(notefield,privatenotevalue);
+                functions.sendkeys(notefield,privatenotevalue);
                 WebElement savenotebutton = driver.findElement(By.xpath("//button[@class='tp-button green secondary']"));
                 functions.clickelement(savenotebutton);
 
@@ -106,6 +107,7 @@ public class AddNote extends BaseTest {
                 String expectedsuccessfullmsg = BaseTest.getvalue("privatenotemessage");
                 functions.validatetext(privatemessage,expectedsuccessfullmsg);
                 Assert.assertEquals(actuallocationname,locationname);
+
 
 //                driver.navigate().refresh();
 
@@ -116,7 +118,7 @@ public class AddNote extends BaseTest {
 
                 WebElement notefield = driver.findElement(By.xpath("//textarea[@data-v-6db1aff9]"));
                 String publicnotevalue = parsenote[1];
-                functions.completefield(notefield,publicnotevalue);
+                functions.sendkeys(notefield,publicnotevalue);
                 WebElement privatecheckbox = driver.findElement(By.xpath("//input[@id='is_private']"));
                 functions.clickelement(privatecheckbox);
                 WebElement savenotebutton = driver.findElement(By.xpath("//button[@class='tp-button green secondary']"));
@@ -133,7 +135,40 @@ public class AddNote extends BaseTest {
                 WebElement savenotebutton = driver.findElement(By.xpath("//button[@class='tp-button green secondary']"));
                 functions.clickelement(savenotebutton);
 
+                Alert alert = driver.switchTo().alert();
+                // Capturing alert message.
+                String alertMessage= driver.switchTo().alert().getText();
+
+                // Displaying alert message
+                System.out.println(alertMessage);
+
+                String expectederrornotemsg = BaseTest.getvalue("noteerrormessage");
+                Assert.assertEquals(alertMessage,expectederrornotemsg);
+
+                alert.accept();
+                Assert.assertEquals(actuallocationname,locationname);
+
+
+
             }
         }
+
+        WebElement backbutton = driver.findElement(By.xpath("//h4/span[2][@data-v-393cebf4]"));
+        new WebDriverWait(driver,8000).until(ExpectedConditions.visibilityOf(backbutton));
+        functions.clickelement(backbutton);
+
+        // DELETE THE TRIP
+
+        functions.waitwithtry();
+        WebElement elipsabutton = driver.findElement(By.xpath("//i[@class='icon icon-ellipsis']"));
+        functions.clickelement(elipsabutton);
+
+        WebElement deletetripbutton = driver.findElement(By.xpath("//i[@class='icon icon-trash']"));
+        functions.clickelement(deletetripbutton);
+
+        WebElement yesdeletebutton = driver.findElement(By.xpath("//button[@class='tp-button has-icon secondary danger']"));
+        functions.clickelement(yesdeletebutton);
+
+        functions.validatetitle(expectedyourtrippagetitle,driver);
     }
 }
