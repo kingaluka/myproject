@@ -2,20 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3cb754b-6c63-470d-825f-acfa55b32954" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/Test/AddStops.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Help/Helpmethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Help/Helpmethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Test/AddFirstStop.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Help/Helpmethods.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Test/AddNote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Test/AddNote.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Test/AddaSecondStop.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Test/AddStops.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Test/AddStops.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Test/AddaTrip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Test/AddaTrip.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Test/RegisterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Test/RegisterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/InputDate.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/InputDate.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Help/Helpmethods.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Help/Helpmethods.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/InputDate.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/InputDate.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Test/AddFirstStop.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Help/Helpmethods.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/Test/AddNote.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Test/AddNote.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Test/AddaSecondStop.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Test/AddStops.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Test/AddStops.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/Test/AddaTrip.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Test/AddaTrip.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/Test/RegisterTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Test/RegisterTest.class" afterDir="false" />
     </list>
@@ -32,11 +28,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/Test/AddNote.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/Test/RegisterTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="50" column="40" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
+            <state relative-caret-position="126">
+              <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/Test/AddStops.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="169">
+              <caret line="130" lean-forward="true" selection-start-line="170" selection-start-column="8" selection-end-line="170" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -49,6 +54,30 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="18">
               <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/Test/AddaTrip.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="55" column="29" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/Test/AddNote.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1973">
+              <caret line="168" column="53" selection-start-line="168" selection-start-column="53" selection-end-line="168" selection-end-column="53" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -68,7 +97,7 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/src" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -81,15 +110,15 @@
         <option value="$PROJECT_DIR$/src/test/java/Test/ProbaAddaSecondStop.java" />
         <option value="$PROJECT_DIR$/src/test/java/Test/LoginTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/Test/Proba.java" />
-        <option value="$PROJECT_DIR$/src/test/java/Test/AddaTrip.java" />
         <option value="$PROJECT_DIR$/src/test/java/Help/BaseTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/Test/AddStop.java" />
-        <option value="$PROJECT_DIR$/src/test/java/Test/RegisterTest.java" />
         <option value="$PROJECT_DIR$/src/test/resources/InputDate.properties" />
-        <option value="$PROJECT_DIR$/src/test/java/Help/Helpmethods.java" />
         <option value="$PROJECT_DIR$/src/test/java/Test/AddaSecondStop.java" />
         <option value="$PROJECT_DIR$/src/test/java/Test/AddFirstStop.java" />
+        <option value="$PROJECT_DIR$/src/test/java/Help/Helpmethods.java" />
+        <option value="$PROJECT_DIR$/src/test/java/Test/AddaTrip.java" />
         <option value="$PROJECT_DIR$/src/test/java/Test/AddStops.java" />
+        <option value="$PROJECT_DIR$/src/test/java/Test/RegisterTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/Test/AddNote.java" />
       </list>
     </option>
@@ -101,7 +130,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="676" />
     <option name="width" value="697" />
     <option name="height" value="735" />
@@ -113,6 +142,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -171,7 +201,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -198,7 +227,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AddStops">
+  <component name="RunManager" selected="JUnit.AddStops.addastops">
     <configuration name="AddNote.proba" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MyPojectAutomation" />
       <extension name="coverage">
@@ -215,7 +244,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AddStops" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AddStops.addastops" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MyPojectAutomation" />
       <extension name="coverage">
         <pattern>
@@ -225,22 +254,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="Test" />
       <option name="MAIN_CLASS_NAME" value="Test.AddStops" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AddStops.addasecondstop" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="MyPojectAutomation" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Test" />
-      <option name="MAIN_CLASS_NAME" value="Test.AddStops" />
-      <option name="METHOD_NAME" value="addasecondstop" />
+      <option name="METHOD_NAME" value="addastops" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -258,6 +272,21 @@
       <option name="MAIN_CLASS_NAME" value="Test.AddaTrip" />
       <option name="METHOD_NAME" value="addatrip" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RegisterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MyPojectAutomation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.RegisterTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -280,11 +309,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AddStops" />
+        <item itemvalue="JUnit.AddStops.addastops" />
+        <item itemvalue="JUnit.RegisterTest" />
         <item itemvalue="JUnit.AddNote.proba" />
         <item itemvalue="JUnit.AddaTrip.addatrip" />
         <item itemvalue="JUnit.RegisterTest.register" />
-        <item itemvalue="JUnit.AddStops.addasecondstop" />
       </list>
     </recent_temporary>
   </component>
@@ -302,42 +331,41 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AddaTrip_addatrip - 2019.08.15 at 19h 25m 05s.xml">
+    <history-entry file="AddaTrip_addatrip - 2019.08.20 at 15h 19m 03s.xml">
       <configuration name="AddaTrip.addatrip" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AddStops - 2019.08.15 at 19h 27m 10s.xml">
-      <configuration name="AddStops" configurationId="JUnit" />
+    <history-entry file="AddStops_addastops - 2019.08.20 at 15h 20m 58s.xml">
+      <configuration name="AddStops.addastops" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AddNote_proba - 2019.08.15 at 19h 29m 17s.xml">
+    <history-entry file="AddNote - 2019.08.20 at 15h 22m 51s.xml">
+      <configuration name="AddNote" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RegisterTest_register - 2019.08.20 at 15h 30m 03s.xml">
+      <configuration name="RegisterTest.register" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AddaTrip_addatrip - 2019.08.20 at 15h 31m 11s.xml">
+      <configuration name="AddaTrip.addatrip" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AddaTrip_addatrip - 2019.08.20 at 15h 33m 16s.xml">
+      <configuration name="AddaTrip.addatrip" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AddStops_addastops - 2019.08.20 at 15h 49m 23s.xml">
+      <configuration name="AddStops.addastops" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AddNote_proba - 2019.08.20 at 15h 51m 44s.xml">
       <configuration name="AddNote.proba" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AddNote_proba - 2019.08.15 at 19h 35m 34s.xml">
-      <configuration name="AddNote.proba" configurationId="JUnit" />
+    <history-entry file="RegisterTest - 2019.08.20 at 19h 09m 22s.xml">
+      <configuration name="RegisterTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AddNote_proba - 2019.08.15 at 19h 37m 10s.xml">
-      <configuration name="AddNote.proba" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AddNote_proba - 2019.08.15 at 19h 37m 46s.xml">
-      <configuration name="AddNote.proba" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AddNote_proba - 2019.08.15 at 19h 39m 08s.xml">
-      <configuration name="AddNote.proba" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AddNote_proba - 2019.08.15 at 19h 43m 22s.xml">
-      <configuration name="AddNote.proba" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AddNote_proba - 2019.08.15 at 19h 44m 31s.xml">
-      <configuration name="AddNote.proba" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AddStops - 2019.08.15 at 19h 48m 19s.xml">
-      <configuration name="AddStops" configurationId="JUnit" />
+    <history-entry file="AddStops_addastops - 2019.08.20 at 19h 11m 50s.xml">
+      <configuration name="AddStops.addastops" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2579425" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18381241" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -346,7 +374,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.27986908" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.27986908" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -366,16 +394,6 @@
     </layout>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/Test/AddNote.java</url>
-          <line>71</line>
-          <properties />
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
         <watch expression="locationlist" />
@@ -431,9 +449,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Test/AddStop.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/Test/AddaSecondStop.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/Test/AddFirstStop.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/Help/HelperMethods.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-241">
+          <caret line="73" column="37" selection-start-line="73" selection-start-column="37" selection-end-line="73" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Test/AddaTrip.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="55" column="29" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Test/AddNote.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1973">
+          <caret line="168" column="53" selection-start-line="168" selection-start-column="53" selection-end-line="168" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Help/BaseTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
+        <state relative-caret-position="486">
           <caret line="27" column="72" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="72" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -443,64 +494,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Test/AddStop.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/Help/Helpmethods.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="93" column="30" lean-forward="true" selection-start-line="93" selection-start-column="30" selection-end-line="93" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Test/AddaSecondStop.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="314" column="5" lean-forward="true" selection-start-line="18" selection-start-column="4" selection-end-line="314" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Test/AddFirstStop.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="158" column="64" selection-start-line="154" selection-end-line="158" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Test/RegisterTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="260" selection-start-line="260" selection-end-line="260" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Test/AddStops.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="334" lean-forward="true" selection-start-line="334" selection-end-line="334" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Test/AddaTrip.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="185" column="67" lean-forward="true" selection-start-line="172" selection-end-line="185" selection-end-column="67" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="126">
+          <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -511,10 +508,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Test/AddNote.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/Test/AddStops.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="50" column="40" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
+        <state relative-caret-position="169">
+          <caret line="130" lean-forward="true" selection-start-line="170" selection-start-column="8" selection-end-line="170" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

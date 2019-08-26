@@ -1,7 +1,7 @@
 package Test;
 
 import Help.BaseTest;
-import Help.Helpmethods;
+import Help.HelperMethods;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Random;
 
 public class AddaTrip extends BaseTest {
-    public Helpmethods functions= new Helpmethods(driver);
+    public HelperMethods functions= new HelperMethods(driver);
 
     @Test
     public void addatrip (){

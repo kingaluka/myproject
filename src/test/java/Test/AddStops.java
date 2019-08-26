@@ -1,7 +1,7 @@
 package Test;
 
 import Help.BaseTest;
-import Help.Helpmethods;
+import Help.HelperMethods;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -14,12 +14,14 @@ import java.util.*;
 
 public class AddStops  extends BaseTest {
 
-    public Helpmethods functions = new Helpmethods(driver);
+    public HelperMethods functions = new HelperMethods(driver);
     private String today;
 
     @Test
-    public void addasecondstop (){
+    public void addastops (){
         JavascriptExecutor scroll = (JavascriptExecutor)driver;
+        String expectedhomepagetitle = BaseTest.getvalue("homepagetitle");
+        functions.validatetitle(expectedhomepagetitle, driver);
 //  click on login button
         WebElement loginbutton = driver.findElement(By.xpath("//span[@class='visible-lg-inline-block']"));
         functions.clickelement(loginbutton);
@@ -40,7 +42,12 @@ public class AddStops  extends BaseTest {
 //  click on add a new trip button
         WebElement addanewtripbutton = driver.findElement(By.xpath("//i[@class='icon icon-plus-circled']"));
         functions.clickelement(addanewtripbutton);
-//  complete the title and describe field for add a trip
+
+//   VALIDARE PAGINA: YOUR TRIP
+        String expectedyourtriptitle = BaseTest.getvalue("yourtripspagetitle");
+        functions.validatetitle(expectedyourtriptitle,driver);
+
+//  complete the title field for add a trip
         WebElement tripnamefield = driver.findElement(By.xpath("//input[@class='trip-name']"));
         String tripnamevalue = BaseTest.getvalue("tripnamevalues");
         functions.sendkeys(tripnamefield,tripnamevalue);
@@ -48,10 +55,12 @@ public class AddStops  extends BaseTest {
         functions.waitwithtry();
         WebElement addtripbutton = driver.findElement(By.xpath("//button[@class='tp-button has-icon green']"));
         functions.clickelement(addtripbutton);
-//   validarea titlului de trip
+
+//    VALIDARE TRIPUL CREAT
         functions.waitwithtry();
         WebElement triptitle = driver.findElement(By.xpath("//span[@class='trip-name']"));
-        new WebDriverWait(driver,7500).until(ExpectedConditions.visibilityOf(triptitle));
+        functions.waitexplicit(triptitle,driver,7500);
+//        new WebDriverWait(driver,7500).until(ExpectedConditions.visibilityOf(triptitle));
         functions.validatetext(triptitle,tripnamevalue);
 
 
@@ -68,37 +77,36 @@ public class AddStops  extends BaseTest {
         WebElement stopname =driver.findElement(By.xpath("//li[@class='highlighted']"));
         functions.clickelement(stopname);
 
-        //  validarea paginii
-//        1. validarea stop name
+//        VALIDARE PAGINA DE OPRIRE
         WebElement firststop = driver.findElement(By.xpath("//h3/b"));
         functions.validatetext(firststop,firststopname);
-//        2. validarea pagina de trip
-        functions.validatetext(triptitle,tripnamevalue);
-        String expectedyourtriptitle = BaseTest.getvalue("yourtripspagetitle");
-//        3. validarea pagina de web
-        functions.validatetitle(expectedyourtriptitle,driver);
+////        2. validarea pagina de trip
+//        functions.validatetext(triptitle,tripnamevalue);
+////        3. validarea pagina de web
+//        String expectedyourtriptitle = BaseTest.getvalue("yourtripspagetitle");
+//        functions.validatetitle(expectedyourtriptitle,driver);
 
 //click on save stop button
         WebElement savestopbutton = driver.findElement(By.xpath("//button[@id]"));
         functions.clickelement(savestopbutton);
 
 //VALIDARE
-//        1.titlul paginii
+////        1.titlul paginii
+//
+//        functions.validatetitle(expectedyourtriptitle,driver);
+//
+////        2. pagina de trip
+//
+//        functions.validatetext(triptitle,tripnamevalue);
 
-        functions.validatetitle(expectedyourtriptitle,driver);
-
-//        2. pagina de trip
-
-        functions.validatetext(triptitle,tripnamevalue);
-
-//        3. vaidarea primul oprire
+//        3. VALIDARE PRIMUL OPRIRE
         functions.waitwithtry();
         WebElement locationweb = driver.findElement(By.xpath("//ul[@data-v-a115fc5c]/li"));
         String actuallocation = locationweb.getText();
         String expectedlocation = "1 "+ firststopname;
         Assert.assertEquals(expectedlocation, actuallocation);
 
-//        4. validarea locatiei pe harta
+//        4. VALIDAREA LOCATIEI PE HARTA
         functions.waitwithtry();
         WebElement firststoplocation = driver.findElement(By.xpath("//div[@class='place_label']"));
         functions.validatetext(firststoplocation,firststopname);
@@ -122,13 +130,13 @@ public class AddStops  extends BaseTest {
         functions.clickelement(secondstoplist.get(0));
 
 //  validarea paginii
-//        1. validarea stop name
+//        1. VALIDARE PAGINA DE OPRIRE
         WebElement secondstop = driver.findElement(By.xpath("//h3/b"));
         functions.validatetext(secondstop,secondstopname);
-//        2. validarea pagina de trip
-        functions.validatetext(triptitle,tripnamevalue);
-//        3. validarea pagina de web
-        functions.validatetitle(expectedyourtriptitle,driver);
+////        2. validarea pagina de trip
+//        functions.validatetext(triptitle,tripnamevalue);
+////        3. validarea pagina de web
+//        functions.validatetitle(expectedyourtriptitle,driver);
 
 
 //  click random for a arrival transport mode
@@ -190,16 +198,16 @@ public class AddStops  extends BaseTest {
         functions.clickelement(save2stopbutton);
 
 //   validarea
-//        1. validarea paginii
+////        1. validarea paginii
+//
+//        functions.validatetitle(expectedyourtriptitle,driver);
+//
+////        2. validarea tripname
+//
+//        functions.waitwithtry();
+//        functions.validatetext(triptitle,tripnamevalue);
 
-        functions.validatetitle(expectedyourtriptitle,driver);
-
-//        2. validarea tripname
-
-        functions.waitwithtry();
-        functions.validatetext(triptitle,tripnamevalue);
-
-//        3. validarea opririile in lista
+//        3. VALIDRAEA OPRIRIILE IN LISTA
 
         functions.waitwithtry();
         List<WebElement> locationlist2 = driver.findElements(By.xpath("//ul[@data-v-a115fc5c]/li"));
@@ -219,7 +227,7 @@ public class AddStops  extends BaseTest {
 
             }
         }
-//         4. validarea opririi pe harta
+//         4. VALIDAREA OPRIRII PE HARTA
 
         for(int index=1;index<3;index++)
         {
@@ -239,18 +247,19 @@ public class AddStops  extends BaseTest {
         functions.clickelement(locationlist2.get(1));
         functions.waitwithtry();
 
-//        validarea your trip page
-        functions.validatetitle(expectedyourtriptitle, driver);
+////        validarea your trip page
+//        functions.validatetitle(expectedyourtriptitle, driver);
+//
+//
+////        validarea trip page
+//        WebElement tripnameweb =driver.findElement(By.xpath("//h4/span[2][@data-v-393cebf4]"));
+//        functions.validatetext(tripnameweb,tripnamevalue);
 
-
-//        validarea trip page
-        WebElement tripnameweb =driver.findElement(By.xpath("//h4/span[2][@data-v-393cebf4]"));
-        functions.validatetext(tripnameweb,tripnamevalue);
-
-//        validare pageul de oprire
+//        VALIDARE PAGINA DE OPRIRE
 
         WebElement locationnameweb = driver.findElement(By.xpath("//span[@class='stop-name']"));
-        new WebDriverWait(driver, 9500).until(ExpectedConditions.visibilityOf(locationnameweb));
+//        new WebDriverWait(driver, 9500).until(ExpectedConditions.visibilityOf(locationnameweb));
+        functions.waitexplicit(locationnameweb, driver,7500);
         String actualstopname = locationnameweb.getText();
         Assert.assertEquals(secondstopname,actualstopname);
 
@@ -264,7 +273,7 @@ public class AddStops  extends BaseTest {
         functions.hovermethod(editbutton, driver);
         functions.clickelement(editbutton);
 
-//        validare editing page
+//       VALIDARE PAGINA DE EDITARE
         functions.waitwithtry();
         WebElement editingweb = driver.findElement(By.xpath("//span[@class='stop-name']"));
         String expectededitpagename = "Editing " + secondstopname;
@@ -296,7 +305,8 @@ public class AddStops  extends BaseTest {
 //       click on back button
 
         WebElement backbutton = driver.findElement(By.xpath("//h4/span[2][@data-v-393cebf4]"));
-        new WebDriverWait(driver,8000).until(ExpectedConditions.visibilityOf(backbutton));
+//        new WebDriverWait(driver,8000).until(ExpectedConditions.visibilityOf(backbutton));
+        functions.waitexplicit(backbutton,driver,7000);
         functions.clickelement(backbutton);
 
 //        VALIDARE

@@ -1,23 +1,18 @@
 package Test;
 
 import Help.BaseTest;
-import Help.Helpmethods;
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
+import Help.HelperMethods;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
 public class RegisterTest extends BaseTest {
 
-    public Helpmethods functions = new Helpmethods(driver);
+    public HelperMethods functions = new HelperMethods(driver);
     public String usernamevalue;
     public String emailvalue;
     public String passwordvalue;
@@ -160,10 +155,11 @@ public class RegisterTest extends BaseTest {
 //       5. invalid value for email field
 
             if(index==4) {
-                usernamevalue = parseUsername[0];
-                functions.sendkeys(usernamefield,usernamevalue);
                 emailvalue = parseEmail[2];
                 functions.sendkeys(emailfield,emailvalue);
+                usernamevalue = parseUsername[0];
+                functions.sendkeys(usernamefield,usernamevalue);
+
                 passwordvalue = parsePassword[0];
                 functions.sendkeys(passwordfield,passwordvalue);
                 functions.sendkeys(confirmpasswordfield,passwordvalue);
@@ -173,10 +169,11 @@ public class RegisterTest extends BaseTest {
 
                 WebElement emailerrormsg = driver.findElement(By.xpath("//span/p"));
                 String expectedemailerrormsg = BaseTest.getvalue("emailerrormsg");
+
                 try {
                     functions.validatetext(emailerrormsg, expectedemailerrormsg);
                 }
-                catch (NoSuchElementException e)
+                catch (java.util.NoSuchElementException e)
                 {
                     System.out.println(e);
                 }
@@ -194,16 +191,15 @@ public class RegisterTest extends BaseTest {
 //      6. too less value for password field
 
             if(index==5) {
+                passwordvalue = parsePassword[2];
+                functions.sendkeys(passwordfield,passwordvalue);
                 usernamevalue = parseUsername[0];
                 functions.sendkeys(usernamefield,usernamevalue);
                 emailvalue = parseEmail[0];
                 functions.sendkeys(emailfield,emailvalue);
-                passwordvalue = parsePassword[2];
-                functions.sendkeys(passwordfield,passwordvalue);
+
                 functions.sendkeys(confirmpasswordfield,passwordvalue);
                 functions.pressTABkey(confirmpasswordfield);
-
-             //functions.waitwithtry();
 
                 WebElement passworderrormsg = driver.findElement(By.xpath("//span[@class='field_message']/p"));
                 String expectedpassworderrormsg = BaseTest.getvalue("passworderrormsg");
@@ -215,6 +211,7 @@ public class RegisterTest extends BaseTest {
                 {
                     System.out.println(e);
                 }
+
 
                 functions.waitwithtry();
 
@@ -228,15 +225,15 @@ public class RegisterTest extends BaseTest {
 
 //      7. invalid value for confirm password field
             if(index==6) {
-                usernamevalue = parseUsername[0];
-                functions.sendkeys(usernamefield,usernamevalue);
-                emailvalue = parseEmail[0];
-                functions.sendkeys(emailfield,emailvalue);
                 passwordvalue = parsePassword[0];
                 functions.sendkeys(passwordfield,passwordvalue);
                 confirmpasswordvalue = BaseTest.getvalue("confirmpasswordvalues");
                 functions.sendkeys(confirmpasswordfield,confirmpasswordvalue);
-                functions.pressTABkey(confirmpasswordfield);
+                usernamevalue = parseUsername[0];
+                functions.sendkeys(usernamefield,usernamevalue);
+                emailvalue = parseEmail[0];
+                functions.sendkeys(emailfield,emailvalue);
+                functions.pressTABkey(emailfield);
 
              //functions.waitwithtry();
 
@@ -247,12 +244,15 @@ public class RegisterTest extends BaseTest {
                 try {
                     WebElement confirmpassworderrormsg = driver.findElement(By.xpath("//span[@class='field_message']/p"));
                     String expectedconfirmmsg = BaseTest.getvalue("confirmpassworderrormsg");
+                    String actualerrormsg=confirmpassworderrormsg.getText();
+                    System.out.println(actualerrormsg);
                     functions.validatetext(confirmpassworderrormsg, expectedconfirmmsg);
                 }
                 catch (NoSuchElementException e)
                 {
                     System.out.println(e);
                 }
+                functions.waitwithtry();
 
                 List<WebElement> validfieldlist = driver.findElements(By.xpath("//input[@class='full valid']"));
                 functions.validateListWebelement(validfieldlist,3);
@@ -278,13 +278,6 @@ public class RegisterTest extends BaseTest {
         }
 
     }
-//    @After
-//    public void inchide () {
-//        driver.quit();
 
-//    }
-
-    //size lista de string
-//    lenght la vector []
 
 }

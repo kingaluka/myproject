@@ -1,12 +1,11 @@
 package Test;
 
 import Help.BaseTest;
-import Help.Helpmethods;
+import Help.HelperMethods;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -15,11 +14,13 @@ import java.util.List;
 
 public class AddNote extends BaseTest {
 
-    public Helpmethods functions = new Helpmethods(driver);
+    public HelperMethods functions = new HelperMethods(driver);
     public String notevalue;
 
     @Test
     public void proba () {
+        String expectedhomepagetitle = BaseTest.getvalue("homepagetitle");
+        functions.validatetitle(expectedhomepagetitle, driver);
         //  click on login button
         WebElement loginbutton = driver.findElement(By.xpath("//span[@class='visible-lg-inline-block']"));
         functions.clickelement(loginbutton);
@@ -50,7 +51,8 @@ public class AddNote extends BaseTest {
         functions.waitwithtry();
         WebElement tripnameweb = driver.findElement(By.xpath("//ul/li[@data-v-19daf797]"));
         String tripname =BaseTest.getvalue("tripnamevalues");
-        new WebDriverWait(driver,8500).until(ExpectedConditions.visibilityOf(tripnameweb));
+
+        functions.waitexplicit(tripnameweb,driver,8000);
 
         functions.validatetext(tripnameweb, tripname);
         functions.clickelement(tripnameweb);
@@ -59,7 +61,8 @@ public class AddNote extends BaseTest {
 
         functions.waitwithtry();
         WebElement triptitle = driver.findElement(By.xpath("//span[@class='trip-name']"));
-        new WebDriverWait(driver, 5500).until(ExpectedConditions.visibilityOf(triptitle));
+
+        functions.waitexplicit(triptitle, driver,5500);
         functions.validatetext(triptitle,tripname);
 
         functions.waitwithtry();
@@ -71,7 +74,8 @@ public class AddNote extends BaseTest {
 
         functions.waitwithtry();
         WebElement locationnameweb = driver.findElement(By.xpath("//span[@class='stop-name']"));
-        new WebDriverWait(driver, 7500).until(ExpectedConditions.visibilityOf(locationnameweb));
+
+        functions.waitexplicit(locationnameweb,driver,7000);
         String locationname = "2 "+locationnameweb.getText();
         Assert.assertEquals(actuallocationname,locationname);
 
@@ -96,7 +100,8 @@ public class AddNote extends BaseTest {
             if(index==0) {
 
                 WebElement notefield = driver.findElement(By.xpath("//textarea[@data-v-6db1aff9]"));
-                new WebDriverWait(driver, 8500).until(ExpectedConditions.visibilityOf(notefield));
+
+                functions.waitexplicit(notefield,driver,7000);
                 String privatenotevalue = parsenote[0];
                 functions.sendkeys(notefield,privatenotevalue);
                 WebElement savenotebutton = driver.findElement(By.xpath("//button[@class='tp-button green secondary']"));
@@ -154,7 +159,8 @@ public class AddNote extends BaseTest {
         }
 
         WebElement backbutton = driver.findElement(By.xpath("//h4/span[2][@data-v-393cebf4]"));
-        new WebDriverWait(driver,8000).until(ExpectedConditions.visibilityOf(backbutton));
+
+        functions.waitexplicit(backbutton,driver,7000);
         functions.clickelement(backbutton);
 
         // DELETE THE TRIP

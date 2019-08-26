@@ -12,12 +12,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
-public class Helpmethods {
+public class HelperMethods {
 
     WebDriver driver;
 
 
-    public Helpmethods (WebDriver driver){
+    public HelperMethods(WebDriver driver){
         this.driver = driver;
 
     }
@@ -85,9 +85,9 @@ public class Helpmethods {
 
 //    wait explicit
 
-    public void waitexplicit (WebElement element)
+    public void waitexplicit (WebElement element, WebDriver driver, int value)
     {
-        new WebDriverWait(driver,4500).until(ExpectedConditions.visibilityOf(element));
+        new WebDriverWait(driver, value).until(ExpectedConditions.visibilityOf(element));
     }
 
 //    wait explicit cu try
